@@ -1,6 +1,6 @@
 # Introduction
 
-This repository aims at introducing student and adults to the fundamentals of Computer Science
+This repository aims at introducing students and adults both fundamentals and trends of Computer Science
 
 ## Installation
 
