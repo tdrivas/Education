@@ -1,0 +1,44 @@
+Country,Rate
+Belgium,"6,3"
+Bulgaria,"5,3"
+Czechia,"2,8"
+Denmark,"5,1"
+Germany (until 1990 former territory of the FRG),"3,6"
+Estonia,"6,2"
+Ireland,"6,2"
+Greece,"14,7"
+Spain,"14,8"
+France,"7,9"
+Croatia,"7,6"
+Italy,"9,5"
+Cyprus,"7,5"
+Latvia,"7,6"
+Lithuania,"7,1"
+Luxembourg,"5,3"
+Hungary,"4,1"
+Malta,"3,5"
+Netherlands,"4,2"
+Austria,"6,2"
+Poland,"3,4"
+Portugal,"6,6"
+Romania,"5,6"
+Slovenia,"4,8"
+Slovakia,"6,8"
+Finland,"7,7"
+Sweden,"8,8"
+Iceland,"6,0"
+Liechtenstein,:
+Norway,"4,4"
+Switzerland,"5,1"
+United Kingdom,:
+Montenegro,:
+North Macedonia,:
+Albania,:
+Serbia,"11,1"
+Turkey,:
+,
+Special value,
+:,
+Available flags:,
+b,
+d,
