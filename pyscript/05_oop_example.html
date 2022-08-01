@@ -1,0 +1,121 @@
+
+<html>
+  <head>
+      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  </head>
+  <body>
+    <h2><center>Python Example for OOP </center></h2>
+    <py-script>
+ 
+# A Binary Tree Node
+class Node:
+    # Constructor for generating a new node
+    def __init__(self, value=0):
+        self.value = value 
+        self.left = None
+        self.right = None
+ 
+ 
+# inorder traversal of BST
+def inorder(root):
+	if root is not None:
+		inorder(root.left)
+		print(root.value,end = ' ')
+		inorder(root.right)
+	
+
+# recursive function to add node
+def insert( node, value):
+	 
+	# check if tree is empty, return a new node
+	if node is None:
+		return Node(value)
+ 
+	# Otherwise make a recursion
+	if value < node.value:
+		node.left = insert(node.left, value)
+	else:
+		node.right = insert(node.right, value)
+ 
+	return node
+
+def minValueNode( node):
+    tmp = node
+    # iterate over to find the leftmost leaf
+    while(tmp.left is not None):
+        tmp = tmp.left 
+    return tmp 
+
+
+# Deletion of a node, if there is any, with the given value
+def deleteNode(root, value):
+ 
+	# Base condition to end the recursion
+	if root is None:
+		return root 
+ 
+	# Check if we have to go left
+	if value < root.value:
+		root.left = deleteNode(root.left, value)
+ 
+	# or to go right
+	elif(value > root.value):
+		root.right = deleteNode(root.right, value)
+ 
+	# found it
+	else:
+		 
+		# Node with only one child or no child
+		if root.left is None :
+			temp = root.right 
+			root = None
+			return temp 
+			 
+		elif root.right is None :
+			temp = root.left 
+			root = None
+			return temp
+ 
+		# Node with two children: Get the inorder successor
+		# (smallest in the right subtree)
+		temp = minValueNode(root.right)
+ 
+		# Copy the inorder successor's content to this node
+		root.value = temp.value
+ 
+		# Delete the inorder successor
+		root.right = deleteNode(root.right , temp.value)
+ 
+ 
+	return root 
+ 
+root = Node(55)
+root = insert(root, 29)
+root = insert(root, 19)
+root = insert(root, 52)
+root = insert(root, 77)
+root = insert(root, 59)
+root = insert(root, 1230)
+ 
+print("Inorder traversal of the given tree")
+inorder(root)
+ 
+print("\nDelete 29")
+root = deleteNode(root, 29)
+print("Inorder traversal of the modified tree")
+inorder(root)
+ 
+print("\nDelete 59")
+root = deleteNode(root, 59)
+print("Inorder traversal of the modified tree")
+inorder(root)
+ 
+print("\nDelete 55")
+root = deleteNode(root, 55)
+print("Inorder traversal of the modified tree")
+inorder(root)
+
+    </py-script>
+  </body>
+</html>
