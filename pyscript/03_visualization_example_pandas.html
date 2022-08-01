@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+<py-env>
+- pandas
+- matplotlib
+</py-env>
+</head>
+<body>
+<h3><center>Visualization of Natural gas prices with Twitter sentiment scores using Pandas and Matplotlib </center></h3>
+<div id="python-container"></div>
+<py-script output="python-container">
+import pandas as pd
+import matplotlib.pyplot as plt
+from pyodide.http import open_url
+
+df = pd.read_csv(open_url("https://raw.githubusercontent.com/tdrivas/Education/main/datasets/data.csv"))
+df.columns
+x = df["Price"]
+y = df["Sentiment"]
+fig, ax = plt.subplots()
+ax.plot(x, y)
+fig
+</py-script>
+</body>
+</html>
